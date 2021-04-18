@@ -1,0 +1,68 @@
+.textFieldContainer{
+    display: flex;
+    flex-flow: wrap;
+    row-gap: .6rem;
+    border-radius: .5rem;
+    min-width: 27rem;
+    min-height: 4rem;
+    max-width: 27rem;
+
+    .icon,input{
+        border: 1px $textfield-border solid;
+
+        &:focus ~.icon, &:focus{ 
+            border: 1px $mediumEmphasis solid;
+        }
+
+    }
+
+    .icon{
+        border-left: none !important;
+        padding: 0 .8rem;
+        border-top-right-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+    }
+
+    input{
+        border-right: none !important;
+        padding: .85rem 0 .85rem 1.6rem;
+        border-top-left-radius: .5rem;
+        border-bottom-left-radius: .5rem;
+        flex: 1;
+        color: $highEmphasis;
+        transition: 200ms ease;
+    }
+
+    .error{
+    }
+
+}
+
+input:required:-moz-ui-invalid{
+    border: 1px solid $errorColor;
+    border-right: none;
+    box-shadow: none;
+
+    &~.icon{
+        border: 1px solid $errorColor;
+        border-left: none;
+        box-shadow: none;
+    }
+    
+    &~.error{
+
+    }
+
+}
+
+input[type="search"]::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+
+@media(min-width:52.5em) and (orientation:landscape){
+    
+    .textFieldContainer{
+        max-width: 30rem;
+    }
+
+}

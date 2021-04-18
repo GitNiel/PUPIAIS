@@ -1,0 +1,170 @@
+.loginMain{
+    height: 100vh;
+    background-image: url("../images/loginBackground-1.png");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vw;
+    display: flex;
+    flex-flow: column;
+
+    .pupPylon{
+        position: absolute;
+        top: 4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 25rem;
+        height: 27rem;
+    }
+    
+    & > div{
+        position: relative;
+        margin-top: 30vh;
+        min-height: 42rem;
+        background-color: $surfaceColor;
+        box-shadow: 0px 4px 4px rgba($color: #000000, $alpha: .25),
+                    0px 9px 46px 8px rgba($color: #000000, $alpha: .12),
+                    0px 24px 38px 3px rgba($color: #000000, $alpha: .14),
+                    0px 0px 200px 50px rgba($color: #000000, $alpha: .04);
+        flex: 1;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.6rem;
+        
+        //pupLogo
+        &::before{
+            position: absolute;
+            top: -4rem;
+            min-width: 8rem;
+            min-height: 8rem;
+            content: "";
+            background-image: url("../images/PUPlogo.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 8rem 8rem;
+            border-radius: 5rem;
+            box-shadow: $elevate2dp;
+        }
+
+    }
+
+    header{
+        text-align: center;
+
+        div{
+            min-width: 27rem;
+            height: .05rem;
+            color: $disabled;
+            background-color: $disabled;
+        }
+
+    }
+
+    form{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        gap: 1.6rem;
+
+        .textFieldContainer{
+
+            .icon{
+
+                path{
+                    fill: $mediumEmphasis;
+                }
+            }
+
+        }
+        
+
+        button{
+            background-color: $primaryColorLight;
+            color: $surfaceColor;
+            width: 16rem;
+        }
+
+    }
+
+    a{
+
+        span{
+            color: $primaryColorLight;
+        }
+
+    }
+
+}
+
+@media(min-width:52.5em) and (orientation:landscape){
+    .loginMain{
+        flex-flow: row;
+        background-size: initial;
+
+        .pupPylon{
+            flex: 1;
+            align-self: flex-end;
+            height: 50vw;
+            //reset
+            position: initial;
+            transform: translate(0);
+            
+        }
+
+        &>div{
+            flex: 1;
+            gap: 2.4rem;
+            //reset
+            margin-top: 0;
+
+            //just to center vertically the whole form ui including the visible logo
+            &::before{
+                min-width: 10rem;
+                min-height: 10rem;
+                content: "";
+                position: initial;
+                visibility: hidden;
+            }
+
+        }
+
+        header{
+            position: relative;
+
+            //the actual visible logo for desktop view
+            &::before{
+                position: absolute;
+                top: -2.4rem;
+                left: 50%;
+                transform: translate(-50%,-100%);
+                min-width: 10rem;
+                min-height: 10rem;
+                content: "";
+                background-image: url("../images/PUPlogo.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 10rem 10rem;
+                border-radius: 5rem;
+                box-shadow: $elevate2dp;
+            }
+
+            div{
+                margin: .8rem 0;
+                box-shadow: 0px 0px 1px rgba($color: #000000, $alpha: .25);
+            }
+
+        }
+
+        form{
+            gap: 2.4rem;
+            min-width: 30rem;
+
+            .textFieldContainer{
+                align-self: stretch;
+            }
+            
+        }
+
+    }
+    
+}

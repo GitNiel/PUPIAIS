@@ -1,0 +1,252 @@
+.mainHeader, .headerShadow{
+    width: 100%;
+    height: 5.6rem;
+    position: fixed;
+    top: 0;
+
+    &::before{
+        content: "";
+        height: 8rem;
+        width: 8rem;
+        border-radius: 5rem;
+        position: absolute;
+        top: 57%;
+        left:50%;
+        transform: translate(-50%,-43%);
+    }
+
+}
+.mainHeader{
+    /*padding .4rem both sides
+     to align in 16px margin of 
+     the whole page cause the hamburger icon already 
+     has 12px own padding*/
+    padding: .4rem;
+    background-color: $primaryColor;
+    box-shadow: $elevate4dp;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    
+    &::before{
+        background-image: url("../images/PUPlogo.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: $primaryColor;
+        background-size: 6rem 6rem;
+    }
+    
+    h1{
+        display:none;
+    }
+
+}
+
+.headerShadow{
+    z-index: 3;
+
+    &::before{
+        box-shadow: $elevate4dp;
+    }
+    
+}
+
+nav{
+    position: fixed;
+    left: -100%;
+    transition: 200ms ease;
+    box-shadow: $elevate24dp;
+    z-index: 24;
+    background-color: $primaryColor;
+    color: $surfaceColor;
+    width: 30rem;
+    height: 100vh;
+    padding: .4rem;
+    display: grid;
+    gap: 1.6rem;
+    grid-template-columns: 4.8rem 1fr 10.4rem;
+    grid-template-rows: 4.8rem 4.8rem minmax(20rem, auto) 1fr;
+    background-image: url("../images/PUPlogo.png");
+    background-repeat: no-repeat;
+    background-color: $primaryColor;
+    background-size: 4rem 4rem;
+    background-position: center bottom 5rem;
+
+    .closeIcon{
+        grid-column: 1;
+        grid-row: 1;
+        align-self: center;
+    }
+
+    
+    form,ul{
+        justify-self: center;
+    }
+
+    ul{
+        display: flex;
+        gap: .8rem;
+        flex-flow: column;
+        grid-column: 1 / 4;
+        grid-row: 3 / 4;
+
+        a{
+            display: inline-block;
+            width: 23.8rem;
+            padding: 1.2rem 0;
+            border-radius: 3rem;
+            border: $surfaceColor .1rem solid;
+            color: $surfaceColor;
+            text-align: center;
+        }
+        
+    }
+
+    form{
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+        display: flex;
+        align-items: center;
+
+        input[type="search"]{
+            width: 23.8rem;
+            border-radius: 1.75rem;
+            border: none;
+            background-image: url("../images/search-24px.svg");
+            background-repeat: no-repeat;
+            background-position: center right .4rem;
+        }
+
+        button{
+            display: none;
+        }
+
+    }
+
+    > div{
+        grid-column: 3;
+        grid-row: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button{
+            border-radius: 3rem;
+            white-space: nowrap;
+        }
+
+    }
+
+    h1{
+        grid-column: 1 / 4;
+        grid-row: 4;
+        text-align: center;
+        align-self: flex-end;
+    }
+    
+}
+
+@media(min-width: 52.5em){
+
+    .mainHeader, .headerShadow{
+        height: 6rem;
+        padding: 0 2.4rem;
+        &::before{
+            content: "";
+            background-size: 9rem 9rem;
+            height: 12rem;
+            width: 12rem;
+            border-radius: 7rem;
+            top: 67%;
+            left:100%;
+            transform: translate(-100%,-33%);
+        }
+
+        h1{
+            /*unhide*/
+            display:block;
+        }
+
+        .hamburgerIcon, .notificationIcon{
+            display:none;
+        }
+
+    }
+
+    nav{
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+        top: 6rem;
+        left: 0;
+        background-color: #c9c9c9;
+        width: 100%;
+        height: 4rem;
+        padding: 0 2.4rem;
+        z-index: 2;
+        box-shadow: $elevate2dp;
+
+        ul{
+            flex-flow: row;
+
+            a{
+                display: block;
+                width: initial;
+                line-height: 4rem;
+                padding: 0 2rem;
+                border: none;
+                border-radius: 0;
+                color: $highEmphasis;
+            }
+
+            .active{
+                background-color: $backgroundColor;
+            }
+        }
+
+        form{
+            justify-content: flex-end;
+            flex: 1;
+            gap: .4rem;
+
+            input[type="search"]{
+                min-width: 15rem;
+                max-width: 30rem;
+                flex: 1;
+                background-image: none;
+            }
+
+            button{
+                /*unhide*/
+                display: flex;
+                padding: 0;
+                background-color: transparent;
+
+                &:focus, &:hover{
+                    box-shadow: none;
+                }
+
+                svg{
+                    fill: $highEmphasis;
+                }
+            
+            }
+            
+        }
+
+        > div{
+            margin-right: 10.4rem;
+        }
+
+        .closeIcon{
+            display: none;
+        }
+
+        h1{
+            display: none;
+        }
+        
+    }
+    
+
+}

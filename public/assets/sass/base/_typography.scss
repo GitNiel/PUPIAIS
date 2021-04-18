@@ -1,0 +1,100 @@
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,
+p,a,span,li,dl,
+label,button,input,textarea{
+    line-height: 1.5;
+}
+
+button{
+    font-size: $basic-text;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}
+
+input, a, p, span{
+    font-size: $basic-text;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.025rem;
+}
+
+h1{
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    letter-spacing: 0.025rem;
+}
+
+b{
+    font-weight: 500;
+}
+
+//for mobile nav h1
+nav{
+
+    h1{
+        font-size: 1.4rem;
+        font-weight: 400;
+        letter-spacing: 0.025rem;
+    }
+
+}
+
+.mainHeader{
+    color: $surfaceColor;
+}
+
+.loginMain{
+
+    header{
+
+        h1{
+            font-family: 'Roboto', sans-serif;
+            font-size: $h1-text-mobile;
+            font-weight: 400;
+            letter-spacing: 0.025rem;
+            line-height: 1.5;
+            color: $highEmphasis;
+        }
+
+        span{
+            color: $mediumEmphasis;
+        }
+
+    }
+    
+}
+
+.textFieldContainer{
+
+    .error{
+        font-size: 1rem;
+        letter-spacing: 0.15rem;
+        color: $errorColor;
+    }
+
+}
+
+@media(min-width:52.5em) and (orientation:landscape){
+
+    .loginMain{
+
+        header{
+
+            span{
+                font-size: $overline-text-desktop;
+                letter-spacing: 0.015rem;
+            }
+
+        }
+
+    }
+
+}
